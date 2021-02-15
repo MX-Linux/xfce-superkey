@@ -1,0 +1,63 @@
+ dpkg-buildpackage -us -uc -ui -B
+dpkg-buildpackage: info: source package xfce-superkey-mx
+dpkg-buildpackage: info: source version 21.02.01
+dpkg-buildpackage: info: source distribution mx
+dpkg-buildpackage: info: source changed by Dolphin Oracle <dolphinoracle@gmail.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture i386
+ fakeroot debian/rules clean
+dh clean 
+   dh_auto_clean
+	make -j1 clean
+make[1]: Entering directory '/media/demo/dataext/development/working/xfce-superkey/32'
+if [ -e xfce-superkey ]; then rm xfce-superkey; fi
+make[1]: Leaving directory '/media/demo/dataext/development/working/xfce-superkey/32'
+   dh_clean
+ debian/rules build-arch
+dh build-arch 
+   dh_update_autotools_config -a
+   dh_auto_configure -a
+   dh_auto_build -a
+	make -j1
+make[1]: Entering directory '/media/demo/dataext/development/working/xfce-superkey/32'
+cc -g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/xfce-superkey/32=. -fstack-protector-strong -Wformat -Werror=format-security -Wall `pkg-config --cflags xtst x11` -o xfce-superkey xcape.c -Wl,-z,relro `pkg-config --libs xtst x11` -pthread
+make[1]: Leaving directory '/media/demo/dataext/development/working/xfce-superkey/32'
+   dh_auto_test -a
+ fakeroot debian/rules binary-arch
+dh binary-arch 
+   dh_testroot -a
+   dh_prep -a
+   dh_auto_install -a
+	make -j1 install DESTDIR=/media/demo/dataext/development/working/xfce-superkey/32/debian/xfce-superkey-mx AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/media/demo/dataext/development/working/xfce-superkey/32'
+install -d -m 0755 /media/demo/dataext/development/working/xfce-superkey/32/debian/xfce-superkey-mx/usr/local/bin
+install -m 0755 xfce-superkey /media/demo/dataext/development/working/xfce-superkey/32/debian/xfce-superkey-mx/usr/local/bin/xfce-superkey
+make[1]: Leaving directory '/media/demo/dataext/development/working/xfce-superkey/32'
+   dh_install -a
+   dh_installdocs -a
+   dh_installchangelogs -a
+   dh_perl -a
+   dh_link -a
+   dh_strip_nondeterminism -a
+   dh_compress -a
+   dh_fixperms -a
+   dh_missing -a
+   dh_strip -a
+   dh_makeshlibs -a
+   dh_shlibdeps -a
+   dh_installdeb -a
+   dh_gencontrol -a
+   dh_md5sums -a
+   debian/rules override_dh_builddeb
+make[1]: Entering directory '/media/demo/dataext/development/working/xfce-superkey/32'
+dh_builddeb -- -Z xz
+dpkg-deb: building package 'xfce-superkey-mx-dbgsym' in '../xfce-superkey-mx-dbgsym_21.02.01_i386.deb'.
+dpkg-deb: building package 'xfce-superkey-mx' in '../xfce-superkey-mx_21.02.01_i386.deb'.
+make[1]: Leaving directory '/media/demo/dataext/development/working/xfce-superkey/32'
+ dpkg-genbuildinfo --build=any
+ dpkg-genchanges --build=any >../xfce-superkey-mx_21.02.01_i386.changes
+dpkg-genchanges: info: binary-only arch-specific upload (source code and arch-indep packages not included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now signing dsc file...
+debsign: Can't find or can't read dsc file xfce-superkey-mx_21.02.01.dsc!

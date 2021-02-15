@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sun, 14 Feb 2021 19:54:11 -0400
+Source: xfce-superkey-mx
+Binary: xfce-superkey-mx xfce-superkey-mx-dbgsym
+Architecture: i386
+Version: 21.02.01
+Distribution: mx
+Urgency: medium
+Maintainer: dolphinoracle <dolphinoracle@gmail.com>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ xfce-superkey-mx - allows super key to be used with keyboard combos
+Changes:
+ xfce-superkey-mx (21.02.01) mx; urgency=medium
+ .
+   * Initial release.
+Checksums-Sha1:
+ 3a01770468c9e8b21fe034b4412c9f213e9a842d 9992 xfce-superkey-mx-dbgsym_21.02.01_i386.deb
+ 8261fe11a8e6c6bc964863e89fb02c96b705ecbb 5527 xfce-superkey-mx_21.02.01_i386.buildinfo
+ 07333f861bd50e9b86b84dd7f403ac89783a4410 7076 xfce-superkey-mx_21.02.01_i386.deb
+Checksums-Sha256:
+ b0f322308e3deb181c95644fea5c9e773f8dd2568a3d65b93ea0473ef86075bd 9992 xfce-superkey-mx-dbgsym_21.02.01_i386.deb
+ 328fe20671624eb074d2fb4216098682465279421c99065df1f8219aedf0cac6 5527 xfce-superkey-mx_21.02.01_i386.buildinfo
+ 2d1e65cc07cf320c8ce6f6ae20a77a4de0f8c21c1f7c9ded985a2a8f16c3d15c 7076 xfce-superkey-mx_21.02.01_i386.deb
+Files:
+ 57b49918902e7f10672a125102411708 9992 debug optional xfce-superkey-mx-dbgsym_21.02.01_i386.deb
+ e56abd202e390bcb5f3754562ff4b6c0 5527 admin optional xfce-superkey-mx_21.02.01_i386.buildinfo
+ 7c5b8d51104a3883421ff7fd823cac4c 7076 admin optional xfce-superkey-mx_21.02.01_i386.deb

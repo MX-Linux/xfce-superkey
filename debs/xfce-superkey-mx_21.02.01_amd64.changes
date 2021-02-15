@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Sun, 14 Feb 2021 19:54:11 -0400
+Source: xfce-superkey-mx
+Binary: xfce-superkey-mx xfce-superkey-mx-dbgsym
+Architecture: source amd64
+Version: 21.02.01
+Distribution: mx
+Urgency: medium
+Maintainer: dolphinoracle <dolphinoracle@gmail.com>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ xfce-superkey-mx - allows super key to be used with keyboard combos
+Changes:
+ xfce-superkey-mx (21.02.01) mx; urgency=medium
+ .
+   * Initial release.
+Checksums-Sha1:
+ 979cf3872e0ceb6072485f23d446bcf3aa480b4f 619 xfce-superkey-mx_21.02.01.dsc
+ 12619a834e5e43e773ea3c02d160b04c8e01d5dd 17900 xfce-superkey-mx_21.02.01.tar.xz
+ eac51cc139dfe551b319483605468f190aba2a56 11380 xfce-superkey-mx-dbgsym_21.02.01_amd64.deb
+ c830217ddc3303e71413c35bfee9c9059262e6ea 5821 xfce-superkey-mx_21.02.01_amd64.buildinfo
+ c69d5215acf9599079f511c8af2883e6ddabe35a 6772 xfce-superkey-mx_21.02.01_amd64.deb
+Checksums-Sha256:
+ 0334339c05c46d3d7284af2200b4e73de61b37f96dfdf138919912057e0a7eec 619 xfce-superkey-mx_21.02.01.dsc
+ 6f307af8b8ca00c9f39d591307243d019a80e04f63a2ad0d448bfd7cd6b2deba 17900 xfce-superkey-mx_21.02.01.tar.xz
+ cc6e8d9342578cbb8f659937ca9d7bd65714bcbe74bb337083a5ccda4f3e1f63 11380 xfce-superkey-mx-dbgsym_21.02.01_amd64.deb
+ 5f8341fa585a431f5ab88ee65e960ac9847aaf968293d12df8270a83b7487e2e 5821 xfce-superkey-mx_21.02.01_amd64.buildinfo
+ 470e9a25fe63cffb507b1d743ee88f8bc76780bbe36cda65313f744e598c161c 6772 xfce-superkey-mx_21.02.01_amd64.deb
+Files:
+ bf4bbf3296237ac0170a691a8e666513 619 admin optional xfce-superkey-mx_21.02.01.dsc
+ a846e1972c981312ede34b6e40f26ed4 17900 admin optional xfce-superkey-mx_21.02.01.tar.xz
+ eef8eb253b0a6c015034b279e7b94ac2 11380 debug optional xfce-superkey-mx-dbgsym_21.02.01_amd64.deb
+ 8a3bbbac22fb323afbffa16ad89376eb 5821 admin optional xfce-superkey-mx_21.02.01_amd64.buildinfo
+ 3b25731f425f26439ed49377dc082fcd 6772 admin optional xfce-superkey-mx_21.02.01_amd64.deb

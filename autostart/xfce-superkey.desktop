@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=xfce-superkey
+Comment=xfce-superkey
+Exec=xfce-superkey
+Terminal=false
+Type=Application
+Encoding=UTF-8
+OnlyShowIn=XFCE;
+Categories=Application;Settings
+NoDisplay=false

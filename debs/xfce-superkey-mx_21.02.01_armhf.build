@@ -1,0 +1,93 @@
+ dpkg-buildpackage -us -uc -ui -B
+dpkg-buildpackage: info: source package xfce-superkey-mx
+dpkg-buildpackage: info: source version 21.02.01
+dpkg-buildpackage: info: source distribution mx
+dpkg-buildpackage: info: source changed by Dolphin Oracle <dolphinoracle@gmail.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture armhf
+ fakeroot debian/rules clean
+dh clean 
+dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_auto_clean
+dh_auto_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+	make -j1 clean
+make[1]: Entering directory '/home/pi/xfce-superkey/armhf'
+if [ -e xfce-superkey ]; then rm xfce-superkey; fi
+make[1]: Leaving directory '/home/pi/xfce-superkey/armhf'
+   dh_clean
+dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+ debian/rules build-arch
+dh build-arch 
+dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_update_autotools_config -a
+   dh_auto_configure -a
+dh_auto_configure: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_auto_build -a
+dh_auto_build: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+	make -j1
+make[1]: Entering directory '/home/pi/xfce-superkey/armhf'
+cc -g -O2 -fdebug-prefix-map=/home/pi/xfce-superkey/armhf=. -fstack-protector-strong -Wformat -Werror=format-security -Wall `pkg-config --cflags xtst x11` -o xfce-superkey xcape.c -Wl,-z,relro `pkg-config --libs xtst x11` -pthread
+make[1]: Leaving directory '/home/pi/xfce-superkey/armhf'
+   dh_auto_test -a
+dh_auto_test: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+ fakeroot debian/rules binary-arch
+dh binary-arch 
+dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_testroot -a
+   dh_prep -a
+   dh_auto_install -a
+dh_auto_install: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+	make -j1 install DESTDIR=/home/pi/xfce-superkey/armhf/debian/xfce-superkey-mx AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/home/pi/xfce-superkey/armhf'
+install -d -m 0755 /home/pi/xfce-superkey/armhf/debian/xfce-superkey-mx/usr/local/bin
+install -m 0755 xfce-superkey /home/pi/xfce-superkey/armhf/debian/xfce-superkey-mx/usr/local/bin/xfce-superkey
+make[1]: Leaving directory '/home/pi/xfce-superkey/armhf'
+   dh_install -a
+dh_install: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_installdocs -a
+dh_installdocs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_installchangelogs -a
+   dh_perl -a
+   dh_link -a
+   dh_strip_nondeterminism -a
+   dh_compress -a
+dh_compress: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_fixperms -a
+   dh_missing -a
+dh_missing: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_strip -a
+dh_strip: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_makeshlibs -a
+dh_makeshlibs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_shlibdeps -a
+dh_shlibdeps: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/xfce-superkey-mx/usr/local/bin/xfce-superkey debian/xfce-superkey-mx/usr/bin/xfce-superkey were not linked against ld-linux-armhf.so.3 (they use none of the library's symbols)
+   dh_installdeb -a
+dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   dh_gencontrol -a
+   dh_md5sums -a
+   debian/rules override_dh_builddeb
+make[1]: Entering directory '/home/pi/xfce-superkey/armhf'
+dh_builddeb -- -Z xz
+dpkg-deb: building package 'xfce-superkey-mx-dbgsym' in '../xfce-superkey-mx-dbgsym_21.02.01_armhf.deb'.
+dpkg-deb: building package 'xfce-superkey-mx' in '../xfce-superkey-mx_21.02.01_armhf.deb'.
+make[1]: Leaving directory '/home/pi/xfce-superkey/armhf'
+ dpkg-genbuildinfo --build=any
+ dpkg-genchanges --build=any >../xfce-superkey-mx_21.02.01_armhf.changes
+dpkg-genchanges: info: binary-only arch-specific upload (source code and arch-indep packages not included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian xfce-superkey-mx_21.02.01_armhf.changes ...
+E: xfce-superkey-mx changes: bad-distribution-in-changes-file mx
+W: xfce-superkey-mx: hardening-no-pie usr/bin/xfce-superkey
+W: xfce-superkey-mx: hardening-no-pie usr/local/bin/xfce-superkey
+E: xfce-superkey-mx: no-copyright-file
+E: xfce-superkey-mx: extended-description-is-empty
+E: xfce-superkey-mx: dir-in-usr-local usr/local/bin/
+E: xfce-superkey-mx: file-in-usr-local usr/local/bin/xfce-superkey
+W: xfce-superkey-mx: file-in-unusual-dir usr/local/bin/xfce-superkey
+W: xfce-superkey-mx: binary-without-manpage usr/bin/xfce-superkey
+W: xfce-superkey-mx: executable-not-elf-or-script etc/xdg/autostart/xfce-superkey.desktop
+Finished running lintian.
+Now signing dsc file...
+debsign: Can't find or can't read dsc file xfce-superkey-mx_21.02.01.dsc!

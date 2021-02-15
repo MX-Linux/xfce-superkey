@@ -1,0 +1,65 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package xfce-superkey-mx
+dpkg-buildpackage: info: source version 21.02.01
+dpkg-buildpackage: info: source distribution mx
+dpkg-buildpackage: info: source changed by Dolphin Oracle <dolphinoracle@gmail.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean 
+   dh_auto_clean
+	make -j1 clean
+make[1]: Entering directory '/media/demo/dataext/development/working/xfce-superkey/64'
+if [ -e xfce-superkey ]; then rm xfce-superkey; fi
+make[1]: Leaving directory '/media/demo/dataext/development/working/xfce-superkey/64'
+   dh_clean
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (native)'
+dpkg-source: info: building xfce-superkey-mx in xfce-superkey-mx_21.02.01.tar.xz
+dpkg-source: info: building xfce-superkey-mx in xfce-superkey-mx_21.02.01.dsc
+ debian/rules build
+dh build 
+   dh_update_autotools_config
+   dh_auto_configure
+   dh_auto_build
+	make -j1
+make[1]: Entering directory '/media/demo/dataext/development/working/xfce-superkey/64'
+cc -g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/xfce-superkey/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wall `pkg-config --cflags xtst x11` -o xfce-superkey xcape.c -Wl,-z,relro `pkg-config --libs xtst x11` -pthread
+make[1]: Leaving directory '/media/demo/dataext/development/working/xfce-superkey/64'
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary 
+   dh_testroot
+   dh_prep
+   dh_auto_install
+	make -j1 install DESTDIR=/media/demo/dataext/development/working/xfce-superkey/64/debian/xfce-superkey-mx AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/media/demo/dataext/development/working/xfce-superkey/64'
+install -d -m 0755 /media/demo/dataext/development/working/xfce-superkey/64/debian/xfce-superkey-mx/usr/local/bin
+install -m 0755 xfce-superkey /media/demo/dataext/development/working/xfce-superkey/64/debian/xfce-superkey-mx/usr/local/bin/xfce-superkey
+make[1]: Leaving directory '/media/demo/dataext/development/working/xfce-superkey/64'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   debian/rules override_dh_builddeb
+make[1]: Entering directory '/media/demo/dataext/development/working/xfce-superkey/64'
+dh_builddeb -- -Z xz
+dpkg-deb: building package 'xfce-superkey-mx-dbgsym' in '../xfce-superkey-mx-dbgsym_21.02.01_amd64.deb'.
+dpkg-deb: building package 'xfce-superkey-mx' in '../xfce-superkey-mx_21.02.01_amd64.deb'.
+make[1]: Leaving directory '/media/demo/dataext/development/working/xfce-superkey/64'
+ dpkg-genbuildinfo
+ dpkg-genchanges  >../xfce-superkey-mx_21.02.01_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload; Debian-native package (full source is included)

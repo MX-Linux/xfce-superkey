@@ -85,7 +85,9 @@ Key_t *key_add_key (Key_t *keys, KeyCode key);
 
 void delete_keys (Key_t *keys);
 
-void print_usage (const char *program_name);
+void print_usage (const char *program_name); 
+
+int whisker;
 
 /************************************************************************
  * Main function
@@ -95,6 +97,8 @@ int main (int argc, char **argv)
     XCape_t *self = malloc (sizeof (XCape_t));
 
     int dummy, ch;
+    
+    whisker = system("grep -q whisker ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml");
 
     static char default_mapping[] = "Super_L=Alt_L|F1";
     char *mapping = default_mapping;
@@ -321,7 +325,11 @@ void handle_key (XCape_t *self, KeyMap_t *key,
 
             if (!self->timeout_valid || timercmp (&timev, &self->timeout, <))
             {
-                system("xfce4-popup-whiskermenu");
+                if (whisker == 0) {
+					system("xfce4-popup-whiskermenu");
+				} else {
+					system("xfce4-popup-applicationsmenu");
+				}
             }
         }
         key->used = False;
